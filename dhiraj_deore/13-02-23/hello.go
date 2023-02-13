@@ -1,4 +1,4 @@
-// code for print something golang
+// write a program for print a string 
 
 package main //package declaration
 
