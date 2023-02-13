@@ -1,4 +1,4 @@
-// write Aa progran to find largest of two number.
+// write a progran to find largest of two number.
 
 package main
 
