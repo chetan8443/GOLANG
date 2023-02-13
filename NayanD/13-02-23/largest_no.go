@@ -1,4 +1,4 @@
-// write a progran to find largest of two number.
+// write a program to find largest of two number.
 
 package main
 
