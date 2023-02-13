@@ -1,4 +1,4 @@
-// declaration of variable
+// write a code to declare a variable and print that variable
 
 package main
 
