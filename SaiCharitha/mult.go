@@ -9,7 +9,7 @@ func main(){
     i:=1
     /*     For loop as a Go's While     */
     for {
-        if(i>10){
+        if(i>10){ 
             break;
         }
         fmt.Println(n," X ",i," = ",n*i)
