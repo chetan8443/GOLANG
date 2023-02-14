@@ -1,3 +1,5 @@
+// write a program to find largest of two number.
+
 package main
 
 import "fmt"
