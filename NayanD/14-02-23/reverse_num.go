@@ -2,6 +2,9 @@
 
 package main
 
+import "fmt"
+
+
 func reverseNumber(number int) int {
 
 	result := 0
