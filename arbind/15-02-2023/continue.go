@@ -1,3 +1,4 @@
+//use of continue statement in loop
 package main
 
 import "fmt"
