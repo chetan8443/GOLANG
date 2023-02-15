@@ -1,3 +1,4 @@
+// Prime numbers between 0 to 100
 package main
 
 import "fmt"
