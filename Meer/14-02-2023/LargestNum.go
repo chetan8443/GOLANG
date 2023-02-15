@@ -17,7 +17,7 @@ func main() {
 
 	if num1 > num2 && num1 > num3 {
 		fmt.Println(num1, "is greater number")
-	} else if num2 > num3 && num2 > num1 {
+	} else if num2 > num3 {
 		fmt.Println(num2, "is greater number")
 	} else {
 		fmt.Println(num3, "is greater number")
