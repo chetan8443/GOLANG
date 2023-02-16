@@ -15,7 +15,7 @@ func main() {
 	fmt.Println("Enter the Third number")
 	fmt.Scan(&num3)
 
-	if num1 > num2 {
+	if num1 > num2 && num1 > num3 {
 		fmt.Println(num1, "is greater number")
 	} else if num2 > num3 {
 		fmt.Println(num2, "is greater number")
