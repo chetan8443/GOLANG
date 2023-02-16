@@ -7,7 +7,7 @@ func main(){
 	
 	countFreq(arr,size)
 }
-func countFreq([] arr,size int){
+func countFreq(arr []int,size int){
 	for i:=0;i<size;i++{
 		flag:=0
 		count:=0
