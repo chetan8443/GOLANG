@@ -9,7 +9,7 @@ func main() {
 	fmt.Scanln(&amount)
 
 	temp := amount
-	for i := 0; i < 8; i++ {
+	for i := 0; i < len(notes) ; i++ {
 		fmt.Println(notes[i], " Notes = ", temp/notes[i])
 		temp = temp % notes[i]
 	}
