@@ -8,12 +8,15 @@ var c int
 
 func main() {
 	var n int
-	fmt.Println("Enter the range :")
+	fmt.Print("Enter the range :")
 	fmt.Scanf("%v", &n)
 	a := 0
 	b := 1
 	c := a + b
-	fmt.Println(a, b, c)
+	fmt.Println("Fibonacci series")
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
 	for i := 3; i < n; i++ {
 		//c := a + b
 		//fmt.Println(c)
@@ -21,5 +24,5 @@ func main() {
 		b = c
 		c = a + b
 	}
-	fmt.Println(c)
+	fmt.Print(c)
 }

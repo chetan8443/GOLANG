@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main(){
 	var hars [7] int={1,2,2,2,3,4,5}
