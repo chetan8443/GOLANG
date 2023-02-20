@@ -1,18 +1,10 @@
 // write a function to print first n prime numbers
 
-package main
+package prime
 
 import "fmt"
 
-func main() {
-	fmt.Print("Enter the number : ")
-	n := 0
-	fmt.Scan(&n)
-
-	prime1(n)
-}
-
-func prime1(n int) {
+func Prime(n int) {
 	i := 0
 	num := 2
 	for {
@@ -33,4 +25,3 @@ func prime1(n int) {
 
 	}
 
-}
