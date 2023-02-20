@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	p "new/prime"
+	p "new/prime"  // importing external package
 )
 
 func main() {
@@ -10,6 +10,6 @@ func main() {
 	n := 0
 	fmt.Scan(&n)
 
-	//Prime(n)
+	//calling function from imported package
 	p.Prime(n)
 }
