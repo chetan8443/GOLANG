@@ -2,11 +2,12 @@ package main
 
 import "fmt"
 
-func main() {
-
-	const name string = "Election commision India "
+       const name string = "Election commision India "
 
 	const Year int = 2023
+func main() {
+
+	
 
 	
 	const status bool = false
