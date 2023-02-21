@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	fmt.Println(S)
+	//fmt.Println(S)
 	fmt.Print("Enter the number:")
 	var n int
 	fmt.Scanln(&n) //reading the range
