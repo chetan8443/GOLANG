@@ -7,12 +7,12 @@ import "fmt" // importing fmt
 
 const integer int = 30               // declaring and initializing integer constants
 const float float64 = 25.67          // declaring and initializing float constants
-const boolean bool = true            // declaring and initializing boolean constants
-const String string = "Hello World." // declaring and initializing string constants
 
 // main function
 func main() {
 
+	const boolean bool = true            // declaring and initializing boolean constants
+	const String string = "Hello World." // declaring and initializing string constants
 	fmt.Println("These are constants")
 	fmt.Printf("This is an Integer number : %d \n", integer) //prints out integer
 	fmt.Printf("This is a float number : %f \n", float)      //prints out float
