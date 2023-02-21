@@ -1,3 +1,12 @@
+/*
+Write a program that declares and initializes constants of different data types
+in Golang, including:
+- A constant of type `int`
+- A constant of type `float64`
+- A constant of type `bool`
+- A constant of type `string`
+*/
+
 package main
 
 import "fmt"
