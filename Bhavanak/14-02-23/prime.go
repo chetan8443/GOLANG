@@ -19,4 +19,3 @@ func main() {
 	} else {
 		fmt.Println(num, "is not a Prime Number")
 	}
-}
