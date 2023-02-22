@@ -17,14 +17,14 @@ func main() {
 		fmt.Println()
 
 		switch num {
-		case 1:
+		case 1: //calculate area of circle
 			fmt.Println("Enter the radius of the circle : ")
 			var r float64
 			fmt.Scan(&r)
 			area := 3.14 * r * r
 			fmt.Println("The area of circle is : ", area)
 
-		case 2:
+		case 2: //calculate area of rectangle
 			fmt.Println("Enter the length and width of rectangle : ")
 			var l float64
 			fmt.Scan(&l)
@@ -33,7 +33,7 @@ func main() {
 			area := l * w
 			fmt.Println("The area of rectangle is : ", area)
 
-		case 3:
+		case 3: //calculate area of triangle
 			fmt.Println("Enter the height and base of triangle : ")
 			var l float64
 			fmt.Scan(&l)
@@ -42,11 +42,11 @@ func main() {
 			area := l * w * 0.5
 			fmt.Println("The area of triangle is : ", area)
 
-		case 4:
+		case 4: //exit program
 			fmt.Println("Thank you")
 			os.Exit(1)
       
-		default:
+		default: // if enter invalid option
 			fmt.Println("Please enter a valid option !!")
 		}
 	}
