@@ -1,5 +1,5 @@
 // Count the duplicates numbers in array using Function
-
+   
 package main
 
 import "fmt"
