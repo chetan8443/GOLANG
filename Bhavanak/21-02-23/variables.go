@@ -12,7 +12,7 @@ const b int = 34
 const c string = "Bhavana"
 
 //declaring and intitializing  float variable
-const d float64 = 1.435
+const d float64 = 5.6754
 
 func main() {
 
