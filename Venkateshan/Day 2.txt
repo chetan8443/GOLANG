@@ -1,0 +1,24 @@
+package main
+
+import "fmt" //"fmt = format" package is being used in the program
+
+var m int = 90
+var n float64 = 9.99
+var o bool = true
+var p string = "Cyber Security"
+
+// Declaration and assignment of the variables
+
+func main() {
+
+	fmt.Println(m) //Printing the assigned value for the variable int "m"
+	fmt.Println(n) //Printing the assigned value for the variable Float64 "n"
+	fmt.Println(o) //Printing the assigned value for the variable Boolean "o"
+	fmt.Println(p) //Printing the assigned value for the variable string "p"
+}
+
+Output: 
+90
+9.99
+true
+Cyber Security
