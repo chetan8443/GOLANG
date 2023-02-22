@@ -10,7 +10,7 @@ package main
 
 import "fmt"
 
-func main1() {
+func main() {
 	fmt.Print("Enter the string : ")
 	var S string
 	fmt.Scanln(&S)
