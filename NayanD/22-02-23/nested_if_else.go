@@ -1,3 +1,5 @@
+// Write a program based on the Nested if condition.
+
 package main
 
 import "fmt"
@@ -7,7 +9,7 @@ func main() {
 	var balance int
 
 	fmt.Println("Enter your balance: ")
-	fmt.Scanf("%d", &balance)
+	fmt.Scanf("%d", &balance)               // taking input from user 
 
 	if balance <= 0 {
 		fmt.Printf("Your balance is low ,Please add some funds or penalty will be charged ")
