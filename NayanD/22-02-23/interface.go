@@ -1,8 +1,10 @@
+// program on interface to display area of circle and square.
+
 package main
 
 import "fmt"
 
-type shape interface {
+type shape interface {                  
 	area() float64
 }
 type circle struct {
