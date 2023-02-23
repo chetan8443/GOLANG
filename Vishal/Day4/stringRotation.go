@@ -21,7 +21,7 @@ func isRotation(str1, str2 string) bool {
 }
 
 func main() {
-	// Example input strings
+	
 	str1 := "hello world"
 	str2 := "worldhello "
 
