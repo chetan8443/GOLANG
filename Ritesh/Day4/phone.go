@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
+var num int = 1234567890
+
 func phone() {
-	num := 1234567890
+
 	fmt.Println("My number is :", num)
 }
