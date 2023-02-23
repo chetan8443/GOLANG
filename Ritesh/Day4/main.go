@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"Github.com/Ritesh/Day4/part1"
 )
 
 // Below code block is calling diffrent functions with diffrent arguments
@@ -11,6 +13,8 @@ func main() {
 	a1 := address("Gurgaon")
 	fmt.Println(a1)
 	phone()
+	message := part1.HelloGreeting("Progressive Coder")
+	fmt.Println(message)
 
 }
 
