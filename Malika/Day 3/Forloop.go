@@ -1,38 +1,20 @@
-/*
-Write a program that based on For Loop statements.
-*/
-
+// for loop example for table of a number
 package main
 
 import "fmt"
 
-var v int = 200
+func printTable(number int) {
+	fmt.Println("Table of", number, "is as following")
 
-func main() {
-	 
-	//using if statement in for loop to check the condition
-
-	if v < 0 {
-		fmt.printf("v is less than 0\n")
-		if i == 0 {
-			break
-		}
+	for i := 1; i <= 10; i++ {
+		fmt.Println(number, " x ", i, " = ", number*i)
 	}
-
-	else
-
-	{ for i := v,i < 200; i += 10 
-	fmt.Println(i)
+	fmt.Println()
 }
 
-/*
 func main() {
-	a := 5
-	for i := a; i < 100; i += 5 { // for loop with break statement used
-		if i == 50 {
-			break
-		}
-		fmt.Println(i)
-	}
+	printTable(2)
+	printTable(7)
+	printTable(9)
+	printTable(13)
 }
-*/
