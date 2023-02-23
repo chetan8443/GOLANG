@@ -1,4 +1,3 @@
-// The question can be found at this link. The question is pretty straight forward.
 // We have to take two integers as input, and print their sum. Couple of things to note here is
 
 // The inputs are separated by new line character
