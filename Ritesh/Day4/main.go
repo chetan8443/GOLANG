@@ -10,6 +10,7 @@ func main() {
 	adhaar(1234567891234567)
 	a1 := address("Gurgaon")
 	fmt.Println(a1)
+	phone()
 
 }
 
