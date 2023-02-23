@@ -1,4 +1,4 @@
-// to check the given number is Prime or not.
+// To check a number is Prime or not.
 
 package main
 
@@ -19,3 +19,4 @@ func main() {
 	} else {
 		fmt.Println(num, "is not a Prime Number")
 	}
+}

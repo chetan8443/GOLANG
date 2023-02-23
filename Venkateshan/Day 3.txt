@@ -1,0 +1,101 @@
+package main
+
+import "fmt"
+
+func main() {
+	
+	var m int = 300
+	var n int = 900
+
+	
+	if m == 300 {
+		//if condition is true then check the following 
+		if n == 900 {
+			// if condition is true then print the following 
+			fmt.Printf("Value of m is 300 and n is 900\n")
+		}
+	}
+	fmt.Printf("Exact value of m is : %d\n", m)
+	fmt.Printf("Exact value of n is : %d\n", n)
+}
+
+Output: 
+Value of m is 300 and n is 900
+Exact value of m is : 300
+Exact value of n is : 900
+
+
+package main
+import (
+	"fmt"
+)
+
+func main() {
+
+	var number int
+	fmt.Scanln(&number)
+
+	// switch case for finding whether the number is even or odd
+
+	switch number {
+	case 2, 4, 6, 8, 10:
+		fmt.Println("It is an even number.")
+	case 1, 3, 5, 7, 9:
+		fmt.Println("It is an odd number.")
+	}
+}
+
+Output:
+3
+It is an odd number.
+10
+It is an even number.
+
+
+package main
+import "fmt"
+func main() {
+	m := 150
+
+	for i := m; i <= 1500; i += 150 {
+		if i == 750 {
+			continue
+		}
+		fmt.Println(i)
+	}
+
+}
+
+Output:
+150
+300
+450
+600
+900
+1050
+1200
+1350
+1500
+
+
+package main
+import "fmt"
+func main() {
+	v := 30
+
+	for i := v; i <= 300; i += 30 {
+		if i == 210 {
+			break
+		}
+		fmt.Println(i)
+	}
+
+}
+
+Output:
+30
+60
+90
+120
+150
+180
