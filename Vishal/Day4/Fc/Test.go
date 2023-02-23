@@ -1,4 +1,6 @@
 pacakage Fc
+ 
+var AB int = 3  // global variable declared
 
 func IsRotation(str1, str2 string) bool {
 	// If strings have different lengths, return false
