@@ -1,3 +1,7 @@
+//go code to check whether a number is perfect square or not
+//Input:4
+//Output:true
+
 package main
 
 import (

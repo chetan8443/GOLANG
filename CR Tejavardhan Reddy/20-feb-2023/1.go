@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main1() {
+func main() {
 	var low int
 	var high int
 	fmt.Printf("Enter the lower value:")
@@ -16,4 +16,6 @@ func main1() {
 	}
 }
 
-//Count of Odd numbers in the given range
+//Count of Odd numbers in the given range in mathematical method
+//Input:3,9
+//Output:4

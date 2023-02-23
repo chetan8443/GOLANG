@@ -1,9 +1,9 @@
 package main
 
 import "fmt"
-var score int =0
+var score int =0 //global Variable to use this in all program
 func main() {
-	start() 
+	start() // function will do all task
 	if(score<=2){
 		fmt.Print("You need to take quizzz again")
 	}else{
@@ -23,7 +23,7 @@ func start() {
 	fmt.Println("1) Yes")
 	fmt.Println("2) No")
 	var input int
-	fmt.Scanln(&input)
+	fmt.Scanln(&input)    // to take input and send to switch 
 	switch input {
 	case 1:fmt.Println("opps! Wrong answer")
 	case 2:fmt.Println("Good Job correct answer ! ")
@@ -39,7 +39,7 @@ func start() {
 	fmt.Println("3) Slice types")
 	fmt.Println("4) All of the above.")
 	var input2 int
-	fmt.Scanln(&input2)
+	fmt.Scanln(&input2)  // to take input and send to switch 
 	switch input2 {
 	case 1:fmt.Println("opps! Wrong answer")
 	case 2:fmt.Println("opps! Wrong answer")
@@ -56,7 +56,7 @@ func start() {
 	fmt.Println("3) go to")
 	fmt.Println("4) None of the above.")
 	var input3 int
-	fmt.Scanln(&input3)
+	fmt.Scanln(&input3)  // to take input and send to switch 
 	switch input3 {
 	case 1:fmt.Println("opps! Wrong answer")
 	case 2:fmt.Println("opps! Wrong answer")
@@ -72,7 +72,7 @@ func start() {
 	fmt.Println("1) True")
 	fmt.Println("2) False")
 	var input4 int
-	fmt.Scanln(&input4)
+	fmt.Scanln(&input4)  // to take input and send to switch 
 	switch input4 {
 	case 1:fmt.Println("Good Job correct answer ! ")
 	score++

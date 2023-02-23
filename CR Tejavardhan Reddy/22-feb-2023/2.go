@@ -1,3 +1,16 @@
+/*
+User enters an array
+Then a number is entered by the user
+If the number is present in the array then the index is returned
+else -1 is returned
+Input1:[2,35,7,6,9,0]
+7
+Output1: 2
+***********************
+Input2:[2,35,7,6,9,0]
+8
+Output2:-1
+*/
 package main
 
 import "fmt"
@@ -25,7 +38,7 @@ func main() {
 		}
 	}
 	if flag == 0 {
-		fmt.Print("The element is not found")
+		fmt.Print("-1")
 	} else {
 		fmt.Print("The element is at ", index, " index")
 	}
