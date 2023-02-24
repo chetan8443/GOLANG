@@ -1,0 +1,139 @@
+Code for function and main in same file
+
+package main 
+import "fmt"
+
+func MultiplyNums(a int, b int) int { // function written to multiply two numbers
+	multiply := a * b
+	return multiply
+
+}
+
+func main() {
+
+	fmt.Println(MultiplyNums(12, 10)) // calling and printing the function in the same file present in the main fucntion
+
+}
+Output: 120
+
+
+
+HACKER RANK QUESTION
+
+package main
+import "fmt"
+
+func solveMeFirst(m int, n int) int {
+	return (m / n)
+}
+
+func main() {
+	var m, n, res int
+	fmt.Println("Enter any two numbers:")
+	fmt.Scanf("%d\n%d", &m, &n)
+	res = solveMeFirst(m, n)
+	fmt.Println(res)
+}
+Output: 
+Enter any two numbers:
+50
+5
+10
+
+
+DEFERRED FUNCTION
+
+package main
+import "fmt"
+
+func one() {
+	fmt.Println("Infosec")
+}
+func two() {
+	fmt.Println("Cybersec")
+}
+func three() {
+	fmt.Println("NetworkSec")
+}
+
+func main() {
+	defer three()
+	defer one()
+	two()
+}
+Output:
+Cybersec
+Infosec
+NetworkSec
+
+
+
+For loop, if-else statement and switch conditions inside a function:
+
+package main
+import "fmt"
+func main() {
+	// calling the function
+	checkNumber(6)
+}
+
+// defining the function
+func checkNumber(number int) {
+	// using switch conditions
+	switch number {
+	case 10:
+		fmt.Println("Number is equal to 10")
+	case 8:
+		fmt.Println("Number is equal to 8")
+	case 6:
+		fmt.Println("Number is equal to 6")
+	default:
+		fmt.Println("Number is not equal to 10, 8 or 6")
+	}
+
+	// using if-else statement
+	if number%2 == 0 {
+		fmt.Println("Number is even")
+	} else {
+		fmt.Println("Number is odd")
+	}
+
+	// using for loop
+	for i := 0; i < number; i++ {
+		fmt.Println("Counting: ", i)
+	}
+}
+
+Output: 
+Number is equal to 6
+Number is even
+Counting:  0
+Counting:  1
+Counting:  2
+Counting:  3
+Counting:  4
+Counting:  5
+
+
+Call a global variable in other golang files
+
+For example, if we have two files main.go and util.go
+
+In util.go:
+
+package util
+
+var GlobalVar string
+
+In main.go:
+
+package main
+
+import "util"
+
+func main() {
+	util.GlobalVar = "hello"
+	println(util.GlobalVar)
+}
+
+In this example, the variable GlobalVar is declared as a global variable in util.go and can be accessed in main.go by referring to its package.
