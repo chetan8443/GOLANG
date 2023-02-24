@@ -1,3 +1,5 @@
+//reverse a sentance and prints out a global variable from another folder
+
 package main
 
 import (
