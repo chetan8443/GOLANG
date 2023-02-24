@@ -25,7 +25,7 @@ func main() {
 		for i := count; i >j; i-- {
 			fmt.Print("* ")
 		}
-		fmt.Println("")
+			fmt.Println("")
 	}
 
 }
