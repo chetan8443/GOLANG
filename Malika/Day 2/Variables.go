@@ -2,10 +2,11 @@ package main
 
 //This section tells the go compiler that the
 //package should compile as an executable program
+//This section tells that the "fmt = format" package is being used in the program
 
 import (
 	"fmt"
-) //This section tells that the "fmt = format" package is being used in the program
+)
 
 var x int = 20
 var y bool = true
