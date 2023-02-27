@@ -13,10 +13,12 @@ func main() {
 	for i := 0; i < size; i++ {
 		fmt.Scanln(&arr[i])
 	}
-	for i := 0; i < size; i++ {
-		if arr[i]%2 == 0 {
-			fmt.Print(i)
+	fmt.Println(arr)
+	for i, element := range arr {
+		fmt.Println(i, element)
+		if element%2 == 0 {
 			arr = append(arr[:i], arr[i+1:]...)
 		}
 	}
+	fmt.Print(arr)
 }

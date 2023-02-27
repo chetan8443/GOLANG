@@ -20,29 +20,29 @@ package main
 
 import "fmt"
 
-func main() {
-	fmt.Print("Enter a value:")
-	var a int
-	fmt.Scanln(&a)
-	fmt.Print("Enter b value:")
-	var b int
-	fmt.Scanln(&b)
-	c1 := 0
-	c2 := 0
-	if a == b {
-		fmt.Print("The required number of operation is 0")
-	} else {
-		for i := 0; i < 64; i++ { //the size of integer datatype
-			if (a>>i)&1 == 0 && (b>>i)&1 == 1 {
-				c1 += 1
-			} else if (a>>i)&1 == 1 && (b>>i)&1 == 0 {
-				c2 += 1
-			}
-		}
-	}
-	if c1 == 1 && c2 == 1 {
-		fmt.Println("The number of required operations are 2")
-	} else {
-		fmt.Println("The number of required operations are 1")
-	}
-}
+// func main() {
+// 	fmt.Print("Enter a value:")
+// 	var a int
+// 	fmt.Scanln(&a)
+// 	fmt.Print("Enter b value:")
+// 	var b int
+// 	fmt.Scanln(&b)
+// 	c1 := 0
+// 	c2 := 0
+// 	if a == b {
+// 		fmt.Print("The required number of operation is 0")
+// 	} else {
+// 		for i := 0; i < 64; i++ { //the size of integer datatype
+// 			if (a>>i)&1 == 0 && (b>>i)&1 == 1 {
+// 				c1 += 1
+// 			} else if (a>>i)&1 == 1 && (b>>i)&1 == 0 {
+// 				c2 += 1
+// 			}
+// 		}
+// 	}
+// 	if c1 == 1 && c2 == 1 {
+// 		fmt.Println("The number of required operations are 2")
+// 	} else {
+// 		fmt.Println("The number of required operations are 1")
+// 	}
+// }
