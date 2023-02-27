@@ -17,7 +17,7 @@ func main() {
 	for i := 0; i <= n; i++ {
 		sum += (arr[i])
 	}
-	avg := (float64(sum)) / (float64(n))
+	avg := (float64)) / (float64(n))
 	fmt.Println("sum =", sum)
 	fmt.Println("avg =", avg)
 }
