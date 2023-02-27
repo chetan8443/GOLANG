@@ -1,3 +1,6 @@
+
+// Write a program that declares a map of strings to integers and prints out the values in reverse order.
+
 package main
 
 import "fmt"
