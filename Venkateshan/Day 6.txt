@@ -1,0 +1,34 @@
+Write a program that declares a map of strings to integers and prints out the values in reverse order
+
+package main
+
+import "fmt"
+
+func main() {
+	myMap := map[string]int{
+		"A": 1,
+		"B": 2,
+		"C": 3,
+		"D": 4,
+	}
+
+	keys := make([]string, 0, len(myMap))
+	for key := range myMap {
+		keys = append(keys, key)
+	}
+
+	// Reverse the order of the keys
+	for i, j := 0, len(keys)-1; i < j; i, j = i+1, j-1 {
+		keys[i], keys[j] = keys[j], keys[i]
+	}
+
+	// Print the values in reverse order
+	for _, k := range keys {
+		fmt.Println(myMap[k])
+	}
+}
+Output: 
+4
+3
+2
+1
