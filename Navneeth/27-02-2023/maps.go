@@ -17,11 +17,15 @@ func main() {
 		maps[text] = num // takes input from user
 	}
 
-	// changes the key and value
 	fmt.Println(maps)
-	var rev = map[int]string{}
-	for k, v := range maps {
-		rev[v] = k
+	// Create a slice to store the keys in reverse order
+	keys := make([]string, 0, len(maps))
+	for k := range maps {
+		keys = append(keys, k)
 	}
-	fmt.Println(rev)
+	fmt.Println(keys)
+	// Print out the values in reverse order
+	for i := len(keys) - 1; i >= 0; i-- {
+		fmt.Printf("%v: %v\n", keys[i], maps[keys[i]])
+	}
 }
