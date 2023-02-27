@@ -1,0 +1,23 @@
+Write a program that declares a map of strings to integers and prints out the values in reverse order
+
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+
+	fmt.Println("Integer Reverse Sort")
+
+	num := []int{70, 90, 20, 50, 10, 30, 60}
+
+	// using the function
+	sort.Sort(sort.Reverse(sort.IntSlice(num)))
+	fmt.Println(num)
+
+}
+Output: 
+Integer Reverse Sort
+[90 70 60 50 30 20 10]
