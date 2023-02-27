@@ -2,22 +2,33 @@ Write a program that declares a map of strings to integers and prints out the va
 
 package main
 
-import (
-	"fmt"
-	"sort"
-)
+import "fmt"
 
 func main() {
+	myMap := map[string]int{
+		"A": 1,
+		"B": 2,
+		"C": 3,
+		"D": 4,
+	}
 
-	fmt.Println("Integer Reverse Sort")
+	keys := make([]string, 0, len(myMap))
+	for key := range myMap {
+		keys = append(keys, key)
+	}
 
-	num := []int{70, 90, 20, 50, 10, 30, 60}
+	// Reverse the order of the keys
+	for i, j := 0, len(keys)-1; i < j; i, j = i+1, j-1 {
+		keys[i], keys[j] = keys[j], keys[i]
+	}
 
-	// using the function
-	sort.Sort(sort.Reverse(sort.IntSlice(num)))
-	fmt.Println(num)
-
+	// Print the values in reverse order
+	for _, k := range keys {
+		fmt.Println(myMap[k])
+	}
 }
 Output: 
-Integer Reverse Sort
-[90 70 60 50 30 20 10]
+4
+3
+2
+1
