@@ -9,8 +9,7 @@ func main() {
 	fmt.Println("enter the size of the array")
 	fmt.Scanln(&n)
 	var arr [6]int
-
-	fmt.Println("enter a number")
+    fmt.Println("enter a number")
 	for i = 0; i < n; i++ {
 		fmt.Scanln(&arr[i])
 	}
