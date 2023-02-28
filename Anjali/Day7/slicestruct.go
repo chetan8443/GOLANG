@@ -3,24 +3,24 @@ package main
 import "fmt"
 
 type Person struct {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 func main() {
-    // Create a slice of Person structs
-    people := []Person{
-        {name: "Alice", age: 25},
-        {name: "Bob", age: 30},
-        {name: "Charlie", age: 35},
-    }
-    fmt.Println("People:", people)
+	// Create a slice of Person structs
+	people := []Person{
+		{name: "ABC", age: 10},
+		{name: "DEF", age: 20},
+		{name: "IJK", age: 30},
+	}
+	fmt.Println("People:", people)
 
-    // Create a map of Person structs
-    peopleMap := map[string]Person{
-        "Alice":   {name: "Alice", age: 25},
-        "Bob":     {name: "Bob", age: 30},
-        "Charlie": {name: "Charlie", age: 35},
-    }
-    fmt.Println("People map:", peopleMap)
+	// Create a map of Person structs
+	peopleMap := map[string]Person{
+		"ABC": {name: "ABC", age: 10},
+		"DEF": {name: "DEF", age: 20},
+		"IJK": {name: "IJK", age: 30},
+	}
+	fmt.Println("People map:", peopleMap)
 }
