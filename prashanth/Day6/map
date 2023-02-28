@@ -1,0 +1,10 @@
+package main
+
+import "fmt"
+func main()  {
+	var players map[string]string=map[string]string{
+		"player1": "Sachin",
+		"player2": "Dhoni",
+	}
+	fmt.Println(players)
+}
