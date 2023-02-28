@@ -1,4 +1,4 @@
-// Go Program to reverse an array
+// Go Program to print odd and even index
 
 package main
 

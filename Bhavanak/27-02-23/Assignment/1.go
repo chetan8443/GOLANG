@@ -21,6 +21,6 @@ func main() {
 	sort.Sort(sort.Reverse(sort.StringSlice(keys)))
 
 	for _, k := range keys {
-		fmt.Println(k, fruits[k])
+		fmt.Println(k, ":", fruits[k])
 	}
 }
