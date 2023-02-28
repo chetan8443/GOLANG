@@ -11,7 +11,12 @@ func main() {
 		s = append(s, v)
 
 	}
-	for i := len(s) - 1; i >= 0; i-- {
-		fmt.Println(s[i])
+	//fmt.Print(s)
+	fmt.Print(reverse(s))
+}
+func reverse(s []int) []int {
+	for i := 0; i < len(s)/2; i++ {
+		s[i], s[len(s)-i-1] = s[len(s)-i-1], s[i]
 	}
+	return s
 }
