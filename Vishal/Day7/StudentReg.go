@@ -8,6 +8,41 @@ import (
 
 func main() {
 	sliceOfstruct()
+	mapOfstruct()
+}
+          // creating map of struct type
+func mapOfstruct()  {
+	type fruit struct{
+		price float64
+		unit string
+	}
+
+	var cart = map[string]fruit{}
+	cart["banana"]= fruit{
+		price:50.0,
+		unit: "dozen",
+		          
+	}
+	cart["Oranges"]= fruit{
+		price:40.0,
+		unit: "1kg",
+	}
+	cart["Apples"]= fruit{
+		price:100.0,
+		unit: "1kg",
+	}
+	cart["Coconut"]= fruit{
+		price:40.0,
+		unit: "1",
+	}
+	cart["Watermelon"]= fruit{
+		price:40.0,
+		unit: "1kg",
+	}
+
+	for k, v := range cart {
+		fmt.Printf("Fruit Name: %s and price is %f unit:%s\n",k,v.price,v.unit)// Printed all key value pairs
+	}
 }
 
 func sliceOfstruct() {
