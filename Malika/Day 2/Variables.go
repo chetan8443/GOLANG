@@ -14,7 +14,6 @@ var z string = "Learning Golang"
 var ab float64 = 776.87
 
 // Declaration and assignment of the variables
-
 func main() {
 	fmt.Println(x)  //Printing the assigned value for the variable "x"
 	fmt.Println(y)  //Printing the assigned value for the variable "y"
