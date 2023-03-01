@@ -1,0 +1,51 @@
+1. Creating a pointer to a struct and accessing its fields
+
+package main
+
+import "fmt"
+
+type person struct {
+	name string
+	age  int
+}
+
+func main() {
+	// Create a pointer to a person
+	p := &person{
+		name: "Mohan",
+		age:  70,
+	}
+
+	// Access fields of the pointer
+	fmt.Println("Name:", p.name)
+	fmt.Println("Age:", p.age)
+}
+Output:
+Name: Mohan
+Age: 70
+
+
+2. Creating a slice and modifying its elements using a pointer 
+
+package main
+ 
+import "fmt"
+
+func main() {
+	// Create a slice
+	slice := []int{5, 10, 15, 20, 25}
+	
+	// Create a pointer
+	var ptr *int
+	
+	// Loop through the slice and modify its elements
+	for i := range slice {
+		ptr = &slice[i]
+		*ptr *= 3
+	}
+	
+	// Print the modified slice
+	fmt.Println(slice) 
+}
+Output:
+[15 30 45 60 75]
