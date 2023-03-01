@@ -1,3 +1,4 @@
+// Go program to calcute the reversal array
 package main
 
 import "fmt"

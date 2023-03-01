@@ -1,0 +1,10 @@
+package main 
+import "fmt"
+func main(){
+	array2 := [5] int {20,30,40,50,60}
+	var sumofarray  int = 0 
+	for i:=0;i < len(array2);i++{
+		sumofarray = sumofarray + array2[i]		
+	}
+	fmt.Println("Sum of Element of Array : ",sumofarray)
+}

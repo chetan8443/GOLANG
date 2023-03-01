@@ -1,36 +1,26 @@
+// Read an array from input of any size and print the difference in the
+// even sum and odd sum with respect to the totalsum
 package main
 
-import "fmt"
+import (
+	"fmt"
+	ref "teja/sum"
+)
 
 func main() {
-	//Write a program that declares a map of strings to integers and prints out the values in reverse order
-	a := map[int]string{90: "Dog", 91: "Cat", 92: "Cow", 93: "Bird", 94: "Rabbit"}
-	fmt.Println(a)
-	var v [10]string
-	var k int = 0
-	for i, j := range a {
-		fmt.Println(i, j)
-		v[k] = j
-		k = k + 1
+	fmt.Print("Enter the size:")
+	var size int
+	fmt.Scanf("%d", &size)
+	var arr = make([]int, size)
+	fmt.Println("Enter the elemenets:")
+	for i := 0; i < 5; i++ {
+		fmt.Scan(&arr[i])
 	}
-	fmt.Println(v)
-	//priting the elements in reverse order
-	var r [10]string
-	l := 0
-	var i int
-	for i = len(a) - 1; i >= 0; i-- {
-		r[l] = v[i]
-		l = l + 1
-	}
-	fmt.Println(r)
-	//revrse the values of keys in dictionary
-	duplicate := a
-	var d int = 0
-	for m, _ := range a {
-		duplicate[m] = r[d]
-		d = d + 1
-
-	}
-	fmt.Println(duplicate)
-
+	fmt.Println("The entered array is:", arr)
+	totalSum := ref.Sum(arr)
+	evenSum := ref.EvenSum(arr)
+	oddSum := ref.OddSum(arr)
+	fmt.Println("The sum of elements is:", totalSum)
+	fmt.Println("The sum of even elements with respect to total sum:", totalSum-evenSum)
+	fmt.Println("The sum of odd elements with respect to total sum:", totalSum-oddSum)
 }
