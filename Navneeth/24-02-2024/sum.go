@@ -13,11 +13,11 @@ func main() {
 	var arr = make([]int, size) //makes an array of size given by user
 	for i := 0; i < size; i++ {
 		fmt.Printf("Enter %d element: ", i)
-		fmt.Scanf("%d", arr[i]) //takes in elements for array
+		fmt.Scanf("%d", &arr[i]) //takes in elements for array
 	}
 
 	for i := 0; i < size; i++ {
 		sum += arr[i] //calculates the sum
 	}
-	fmt.Printf("Sum of all the elements: %d", sum)
+	fmt.Printf("Sum of all the elements: %d\n", sum)
 }

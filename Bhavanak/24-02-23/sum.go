@@ -16,27 +16,7 @@ Sample Input
 Sample Output
 31
 */
-/*package main
 
-import "fmt"
-
-func main() {
-	var n, i int
-	fmt.Println("enter the size of the array")
-	fmt.Scanln(&n)
-	var arr [6]int
-	for i = 0; i < n; i++ {
-		fmt.Println("enter a number")
-		fmt.Scanln(&arr[i])
-	}
-	var sum int = 0
-	for i = 0; i < n; i++ {
-		sum = sum + arr[i]
-
-	}
-	fmt.Println(sum)
-}
-*/
 
 package main
 

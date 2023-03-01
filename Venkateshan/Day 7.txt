@@ -1,0 +1,142 @@
+1. Program to create an embedded struct
+
+package main
+
+import "fmt"
+
+type Employee struct {
+	Name string
+	Age  int
+	Address
+}
+
+type Address struct {
+	Street  string
+	City    string
+	PinCode string
+}
+
+func main() {
+	emp1 := Employee{
+		Name: "Tyson",
+		Age:  30,
+		Address: Address{
+			Street:  "123 Main Street",
+			City:    "India",
+			PinCode: "987654",
+		},
+	}
+
+	fmt.Println("Employee 1: ", emp1)
+}
+Output: 
+Employee 1:  {Tyson 30 {123 Main Street India 987654}}
+
+2. Program to create a slice of and map of structs
+
+package main
+import "fmt"
+
+// Define a struct
+type person struct {
+	name string
+	age  int
+}
+
+func main() {
+	// Create a slice of structs
+	people := []person{
+		{name: "Bruce", age: 32},
+		{name: "Rock", age: 22},
+		{name: "Tyson", age: 42},
+	}
+
+	// Create a map
+	peopleMap := make(map[string]person)
+
+	// Iterate through the slice and set the map
+	for _, p := range people {
+		peopleMap[p.name] = p
+	}
+
+	fmt.Println(peopleMap)
+}
+Output: 
+map[Bruce:{Bruce 32} Rock:{Rock 22} Tyson:{Tyson 42}]
+
+3. Write a program that defines an interface type called Shape with two methods: Area()
+and Perimeter(), both of which return a float64 value. Implement this interface for three different types: Rectangle, Circle, and Triangle
+
+
+package main
+
+import "fmt"
+
+// Define interface
+type Shape interface {
+	Area() float64
+}
+
+// Define structs
+type Rectangle struct {
+	width, height float64
+}
+
+type Circle struct {
+	radius float64
+}
+
+type Triangle struct {
+	sideA, sideB, sideC float64
+}
+
+// Define methods for each struct
+func (r Rectangle) Area() float64 {
+	return r.width * r.height
+
+}
+
+func (c Circle) Area() float64 {
+	return c.radius * c.radius * 3.14
+}
+
+func (t Triangle) Area() float64 {
+	s := (t.sideA + t.sideB + t.sideC) / 2
+	return s * (s - t.sideA) * (s - t.sideB) * (s - t.sideC)
+}
+
+// Main function
+func main() {
+	r := Rectangle{width: 5, height: 10}
+	c := Circle{radius: 7}
+	t := Triangle{sideA: 3, sideB: 4, sideC: 5}
+
+	fmt.Println("Rectangle area:", r.Area())
+	fmt.Println("Circle area:", c.Area())
+	fmt.Println("Triangle area:", t.Area())
+}
+Output: 
+Rectangle area: 50
+Circle area: 153.86
+Triangle area: 36
+
+
+
+package main
+
+import "fmt"
+
+func main() {
+	var i interface{} = "tyson"
+	describe(i)
+	s := i.(string)
+	fmt.Println(s)
+}
+func describe(i interface{}) {
+	fmt.Printf("(%v,%T)\n", i, i)
+}
+Output:
+(tyson,string)
+tyson
+
+
