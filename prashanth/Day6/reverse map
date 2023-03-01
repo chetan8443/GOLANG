@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+func main(){
+		
+	reversemap()
+
+}
+
+func reversemap(){
+	playerslist := map[int]string {10:"sachin",7:"Dhoni",18:"Kohli"}
+	fmt.Println(Playerslist,"\n")
+	list1 := []int {}
+	list2 := []string {}
+	for i,j := range playerslist{
+		list1 = append(list1,i)
+		list2 = append(list2,j)
+	}
+	newplayerslist := map[string] int {}
+	for i:=0;i<len(playerslist);i++{
+		newplayerslist[list2[i]] = list1[i]
+	}
+	fmt.Println(newplayerslist,"\n")
+}
