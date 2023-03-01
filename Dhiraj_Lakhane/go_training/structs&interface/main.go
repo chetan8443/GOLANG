@@ -21,4 +21,15 @@ func main() {
    p1.details()  
    e1 := employee{person:person{"John", "Ponting"}, empId: 11}  
    e1.details()  
-} 
+
+   //
+   //
+   var v = []Vertex{{1,2},{5,2},{5,5}}
+	fmt.Println(v)
+}
+
+//slice of structs
+
+type Vertex struct {
+    X, Y float64
+}
