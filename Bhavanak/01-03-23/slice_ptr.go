@@ -19,4 +19,5 @@ func main() {
 func changevalue(arr *[]int) {
 	*arr = append((*arr), 6, 7, 8, 9)
 	fmt.Println(arr)
+	fmt.Println(&arr)
 }
