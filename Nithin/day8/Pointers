@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+type profile struct { //creating a struct with fields
+	name   string
+	age    int
+	gender string
+}
+
+func main() {
+	n1 := profile{
+		"nithin",
+		21,
+		"male",
+	}
+	fmt.Println(n1)
+	changeName(&n1)
+	fmt.Println(n1)
+}
+func changeName(n *profile){
+	n.name="naveen"
+
+} 
