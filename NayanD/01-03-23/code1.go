@@ -1,23 +1,31 @@
-//Creating a slice and modifying its elements using a pointer.
+//Creating a pointer to a struct and accessing its fields
 
 package main
 
 import "fmt"
 
-func main() {
-
-	names := []string{"Nayan", "prathmesh", "chetan", "Arbind"}
-
-	fmt.Println("Before change")
-	fmt.Println(names)
-
-	fmt.Println("After change")
-	change(&names)
-	fmt.Println(names)
+type Person struct {
+	name string
+	age  int
 }
 
-func change(n *[]string) {
-	(*n)[0] = "aniket"
-	(*n)[1] = "Meer"
+func main() {
+	// create a new Person struct and assign its fields
+	p := Person{name: "bunty", age: 55}
 
+	// create a pointer to the Person struct
+	ptr := &p
+
+	// access the fields of the Person struct through the pointer
+	fmt.Println("Before changing value")
+	fmt.Printf("Name: %s, Age: %d\n", ptr.name, ptr.age)
+
+	fmt.Println("After changing value")
+	change_val(&p)
+	fmt.Println(p)
+
+}
+
+func change_val(v *Person) {
+	v.name = "prathmesh"
 }
