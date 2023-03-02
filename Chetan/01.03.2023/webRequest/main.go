@@ -9,7 +9,7 @@ import (
 const url = "https://lco.dev"
 
 func main() {
-	response, err := http.Get(url)
+	response, err := http.Get(url)			//geting response from url
 
 	CheckError(err)
 	defer response.Body.Close() //it closes connection
@@ -22,6 +22,8 @@ func main() {
 	fmt.Println(content)
 
 }
+
+//function for error checking
 func CheckError(err error) {
 	if err != nil {
 		panic(err)
