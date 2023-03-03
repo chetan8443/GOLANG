@@ -5,35 +5,32 @@ import (
 	"sync"
 )
 
-func printNumbers(ch chan int, wg *sync.WaitGroup, isEven bool, n int) {
+func printEvenNumbers(n int, wg *sync.WaitGroup) {
 	defer wg.Done()
-	num := 0
-	if isEven {
-		num = 2
-	} else {
-		num = 1
-	}
 	for i := 0; i < n; i++ {
-		ch <- num
-		num += 2
+		if i%2 == 0 {
+			fmt.Printf("%d ", i)
+		}
+	}
+}
+
+func printOddNumbers(n int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for i := 0; i < n; i++ {
+		if i%2 != 0 {
+			fmt.Printf("%d ", i)
+		}
 	}
 }
 
 func main() {
-	n := 10
-	ch := make(chan int)
 	var wg sync.WaitGroup
-
 	wg.Add(2)
-	go printNumbers(ch, &wg, true, n)  // Print n even numbers
-	go printNumbers(ch, &wg, false, n) // Print n odd numbers
 
-	go func() {
-		wg.Wait()
-		close(ch)
-	}()
+	n := 10
 
-	for num := range ch {
-		fmt.Println(num)
-	}
+	go printEvenNumbers(n, &wg)
+	go printOddNumbers(n, &wg)
+
+	wg.Wait()
 }
