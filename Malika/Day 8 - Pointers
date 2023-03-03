@@ -1,0 +1,31 @@
+// Creating a pointer to a struct and accessing its fields
+package main
+
+import "fmt"
+
+type User struct {
+	Name  string
+	Phone string
+	Email string
+}
+
+func UserPointer() {
+	user := User{
+		Name:  "Malika",
+		Phone: "9898989898",
+		Email: "abc@gmail.com",
+	}
+
+	ptr := &user
+	fmt.Println(ptr)
+	fmt.Println("Name is:", ptr.Name)
+	fmt.Println("Phone number is:", ptr.Phone)
+	fmt.Println("Email is:", ptr.Email)
+
+	fmt.Println("Name via pointers :", (*ptr).Name)
+
+}
+
+func main() {
+	UserPointer()
+}
