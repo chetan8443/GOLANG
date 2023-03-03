@@ -1,0 +1,76 @@
+1. Write a program to print ‘n’ even and odd numbers using goroutines
+
+
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() {
+	n := 10 // number of even and odd numbers to print
+	var wg sync.WaitGroup
+
+	// goroutine to print even numbers
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		for i := 1; i <= n; i++ {
+			if i%2 == 0 {
+				fmt.Print(i, " ")
+			}
+		}
+		fmt.Println()
+	}()
+
+	// goroutine to print odd numbers
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		for i := 1; i <= n; i++ {
+			if i%2 != 0 {
+				fmt.Print(i, " ")
+			}
+		}
+		fmt.Println()
+	}()
+
+	wg.Wait()
+}
+Output:
+1 3 5 7 9 
+2 4 6 8 10 
+
+2. Write a program to print the number of occurrences of a character from a word using Goroutines
+
+
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() {
+	word := "abracadabra"
+	character := 'a'
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go countCharacter(word, character, &wg)
+	wg.Wait()
+}
+
+func countCharacter(word string, character rune, wg *sync.WaitGroup) {
+	defer wg.Done()
+	count := 0
+	for _, r := range word {
+		if r == character {
+			count++
+		}
+	}
+	fmt.Printf("Number of occurrences of '%c' in '%s' is %d\n", character, word, count)
+}
+Output:
+Number of occurrences of 'a' in 'abracadabra' is 5
+
