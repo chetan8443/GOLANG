@@ -1,0 +1,21 @@
+//Creating a pointer to a struct and accessing its fields
+package main
+
+import "fmt"
+
+func modifySlice(slice *[]string) {
+	(*slice)[0] = "b"
+	(*slice)[1] = "b"
+	fmt.Println("Inside modifySlice:", *slice)
+}
+
+func SlicePointer() {
+	slice := []string{" a", "a"}
+
+	modifySlice(&slice)
+	fmt.Println("Inside SlicePointer:", slice)
+}
+
+func main() {
+	SlicePointer()
+}
