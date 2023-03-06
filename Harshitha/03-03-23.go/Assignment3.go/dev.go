@@ -28,7 +28,7 @@ func OddEven(wg *sync.WaitGroup) {
 
 func countAlpha(wg *sync.WaitGroup) {
 	defer wg.Done()
-	var str = "Arbind Kumar"
+	var str = "Harshitha"
 	var str_lower = strings.ToLower(str)
 
 	for i := 0; i < len(str_lower); i++ {
