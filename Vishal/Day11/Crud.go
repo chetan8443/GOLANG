@@ -32,21 +32,26 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8082", nil))
 
 }
-func getByID(w http.ResponseWriter, r *http.Request)  {
-	keys:= r.URL.Query()["id"]
+func getByID(w http.ResponseWriter, r *http.Request) {
+	keys := r.URL.Query()["id"]
+	fmt.Println(keys)
 	var std Students
-	InputId,_ := strconv.Atoi(keys[0])
+	InputId, _ := strconv.Atoi(keys[0])
 
 	for i, v := range students {
 		if v.Id == InputId {
-			std=students[i]
-			jsonData,_:= json.Marshal(std)
+			std = students[i]
+			jsonData, _ := json.Marshal(std)
 			w.Header().Set("Content-Type", "application/json")
-			// jsonData, _ := json.Marshal(map[string]string{"message": "Employee details Not Found"})
+			// jsonData, _ := json.Marshal(map[string]string{"message": "Student  details Not Found"})
 			w.Write(jsonData)
 			return
 		}
-}
+	}
+	w.Header().Set("Content-Type", "application/json")
+	jsonData, _ := json.Marshal(map[string]string{"message": "Student details Not Found"})
+	w.Write(jsonData)
+	return
 }
 func getAll(w http.ResponseWriter, r *http.Request) {
 
@@ -62,13 +67,12 @@ func getAll(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateInfo(w http.ResponseWriter, r *http.Request) {
-	keys:= r.URL.Query()["id"]
+	keys := r.URL.Query()["id"]
 	var std Students
-	InputId,_ := strconv.Atoi(keys[0])
+	InputId, _ := strconv.Atoi(keys[0])
 
 	a, err := ioutil.ReadAll(r.Body)
-    err = json.Unmarshal(a, &std)
-	
+	err = json.Unmarshal(a, &std)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -76,16 +80,16 @@ func updateInfo(w http.ResponseWriter, r *http.Request) {
 	}
 	for i, v := range students {
 		if v.Id == InputId {
-			students=append(students[:i],students[i+1:]... )
-			students=append(students, std)
+			students = append(students[:i], students[i+1:]...)
+			students = append(students, std)
 			w.Header().Set("Content-Type", "application/json")
-			jsonData, _ := json.Marshal(map[string]string{"message": "Employee details have been Updated successfully"})
+			jsonData, _ := json.Marshal(map[string]string{"message": "Student  details have been Updated successfully"})
 			w.Write(jsonData)
 			return
 		}
-}
-w.Header().Set("Content-Type", "application/json")
-	jsonData, _ := json.Marshal(map[string]string{"message": "Employee details have been added successfully"})
+	}
+	w.Header().Set("Content-Type", "application/json")
+	jsonData, _ := json.Marshal(map[string]string{"message": "Student  details have been added successfully"})
 	w.Write(jsonData)
 }
 
@@ -103,7 +107,7 @@ func addStudent(w http.ResponseWriter, r *http.Request) {
 
 	students = append(students, std)
 	w.Header().Set("Content-Type", "application/json")
-	jsonData, _ := json.Marshal(map[string]string{"message": "Employee details have been added successfully"})
+	jsonData, _ := json.Marshal(map[string]string{"message": "Student  details have been added successfully"})
 	w.Write(jsonData)
 }
 func studentHandler(w http.ResponseWriter, r *http.Request) {
@@ -123,25 +127,21 @@ func studentHandler(w http.ResponseWriter, r *http.Request) {
 }
 func deleteById(w http.ResponseWriter, r *http.Request) {
 	// a, er := ioutil.ReadAll(r.Body)
-	keys:= r.URL.Query()["id"]
-	InputId,_ := strconv.Atoi(keys[0])
-
-
-
-
+	keys := r.URL.Query()["id"]
+	InputId, _ := strconv.Atoi(keys[0])
 
 	for i, v := range students {
 		if v.Id == InputId {
-			students=append(students[:i],students[i+1:]... )
+			students = append(students[:i], students[i+1:]...)
 			w.Header().Set("Content-Type", "application/json")
-			jsonData, _ := json.Marshal(map[string]string{"message": "Employee details have been Removed successfully"})
+			jsonData, _ := json.Marshal(map[string]string{"message": "Student  details have been Removed successfully"})
 			w.Write(jsonData)
 			return
 		}
-}
-    w.Header().Set("Content-Type", "application/json")
-			jsonData, _ := json.Marshal(map[string]string{"message": "Employee details Not Found"})
-			w.Write(jsonData)
-			return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	jsonData, _ := json.Marshal(map[string]string{"message": "Student  details Not Found"})
+	w.Write(jsonData)
+	return
 
 }
