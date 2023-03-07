@@ -14,8 +14,9 @@ type Course struct {
 }
 
 func main() {
-
-	EncodeJson()
+	
+// 	EncodeJson()
+	DecodeJson()
 }
 
 func EncodeJson() {
@@ -33,4 +34,23 @@ func EncodeJson() {
 	fmt.Printf("%s\n", dataByte) //It's printing readable format Json Data
 	// fmt.Println(dataByte)    It's printing ASCII values
 
+}
+
+func DecodeJson() {
+	var course Course
+	jsonData := []byte(`
+		{
+		"courseName":"PythonDeveloper",
+		"price":299,
+		"Password":"4324",
+		"Tag":["web-dev","js"]}
+	`)
+	checkValid := json.Valid(jsonData)
+
+	if checkValid {
+		json.Unmarshal(jsonData, &course)
+		fmt.Printf("%#v",course)
+	} else {
+		fmt.Println("JSON WAS NOT VALID")
+	}
 }
