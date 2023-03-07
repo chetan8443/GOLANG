@@ -68,7 +68,7 @@ func getStudentById(w http.ResponseWriter, r *http.Request) {
 
 func dStudentById(w http.ResponseWriter, r *http.Request) {
 
-	// keys :=
+
 
 	id, _ := strconv.Atoi(r.URL.Query().Get("id"))
 
@@ -101,13 +101,13 @@ func UpdateStudent(w http.ResponseWriter, r *http.Request) {
 			student = append(student[:i], student[i+1:]...)
 			student = append(student, std)
 			w.Header().Set("Content-Type", "application/json")
-			jsonData, _ := json.Marshal(map[string]string{"message": "student details have been Removed successfully"})
+			jsonData, _ := json.Marshal(map[string]string{"message": "Student details have been Updated successfully"})
 			w.Write(jsonData)
 			return
 		}
 	}
-	// w.Header().Set("Content-Type", "application/json")
-	// jsonData, _ := json.Marshal(map[string]string{"message": "student details have been added successfully"})
-	// w.Write(jsonData)
+	w.Header().Set("Content-Type", "application/json")
+	jsonData, _ := json.Marshal(map[string]string{"message": "student details not found"})
+	w.Write(jsonData)
 
 }
