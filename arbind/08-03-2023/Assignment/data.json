@@ -1,0 +1,10 @@
+{
+    "Name": "Arbind",
+    "Age":  25,
+    "Address":
+    {
+        "City":    "Gorakhpur",
+        "State":   "Uttar Pradesh",
+        "Country": "India"
+    }
+}
