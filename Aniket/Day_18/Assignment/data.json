@@ -1,0 +1,10 @@
+{
+    "Name": "Tushar",
+    "Age":  25,
+    "Address":
+    {
+        "City":    "Mumbai",
+        "State":   "Maharashtra",
+        "Country": "India"
+    }
+}
