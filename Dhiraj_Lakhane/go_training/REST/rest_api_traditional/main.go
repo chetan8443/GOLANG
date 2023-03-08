@@ -19,9 +19,9 @@ var students []Students
 
 func main() {
 	students = []Students{
-		{Id: 1, Name: "rahul", RollNo: 11},
-		{Id: 2, Name: "vivek", RollNo: 12},
-		{Id: 3, Name: "Yogesh", RollNo: 13},
+		{Id: 1, Name: "dhoni", RollNo: 30},
+		{Id: 2, Name: "kevin", RollNo: 31},
+		{Id: 3, Name: "dhiraj", RollNo:32},
 	}
 	http.HandleFunc("/getAll", studentHandler)
 	http.HandleFunc("/adddata", studentHandler)
