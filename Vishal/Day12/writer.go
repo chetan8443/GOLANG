@@ -1,6 +1,5 @@
-
 package main
-//Progam to create a text file and write content in it
+//Progra to create a txt file and write selected names in that file based on comparison
 import (
 	"bufio"
 	"fmt"
@@ -9,24 +8,27 @@ import (
 )
 
 func main() {
-	fmt.Println("execution started")
-	var names =[]string{"vipul ","Yogesh ","Vivek ","Vishal "}
-   file,err:=os.OpenFile("details.txt",os.O_WRONLY|os.O_CREATE,0644)// creating file and giving permissions to it
+	fmt.Println("execution started")//two lists first and second for writing names
+	var firstList =[]string{"vipul ","Yogesh ","Vivek ","Vishal ","dhiraj","viraj ","prathmesh"}
+	var secondList =[]string{"vipul ","Yogesh ","Vivek ","Vishal ","Arbind","viraj ","prathmesh "}
+   file,err:=os.OpenFile("details.txt",os.O_WRONLY|os.O_CREATE,0644) // creating txt file and giving some permissions
    defer file.Close()
    if err!=nil {
 	log.Fatal(err)
    }
-   bufferWriter:=bufio.NewWriter(file)    //using bufferwriter to write data in that file as string
-	for _, v := range names {
+   bufferWriter:=bufio.NewWriter(file)//using bufferwriter for writing strin that file
+	for i, v := range firstList {
+		if v==secondList[i] {
+			
 		
-		wr,err:=bufferWriter.WriteString(v)
+		wr,err:=bufferWriter.WriteString(v)   //
 		// 
 		_=wr
 		if err != nil {
 			log.Fatal(err)
 		}
-		bufferWriter.Flush()    
-
+		bufferWriter.Flush()
+	}
 	}
 	
 }
