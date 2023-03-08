@@ -1,0 +1,9 @@
+{
+    "dbname": "go",
+    "user": "root",
+    "password": "meer",
+    "host": "localhost",
+    "port": "3306"
+   
+  }
+  
