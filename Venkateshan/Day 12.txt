@@ -1,0 +1,43 @@
+1. Write a program by using encoding/json package (marshal and unmarshal)
+
+
+package main
+import (
+	"encoding/json"
+	"fmt"
+)
+
+// Create a struct to hold the data
+type Person struct {
+	Name string
+	Age  int
+}
+
+func main() {
+	// Create a Person
+	person := Person{
+		Name: "Mohan",
+		Age:  70,
+	}
+
+	// Marshal (convert) the Person struct to JSON
+	personJSON, err := json.Marshal(person)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// Print out the JSON
+	fmt.Println(string(personJSON))
+
+	// Unmarshal (convert) the JSON to a Person struct
+	var unmarshaledPerson Person
+	json.Unmarshal(personJSON, &unmarshaledPerson)
+
+	// Print out the unmarshaled Person
+	fmt.Println(unmarshaledPerson)
+}
+Output: 
+{"Name":"Mohan","Age":70}
+{Mohan 70}
+
