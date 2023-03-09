@@ -1,0 +1,11 @@
+{
+    "Myname":"Chetan",
+    "address":
+    {
+        "city":    "Nashik",
+        "state":   "Maharashtra",
+        "country": "India"
+    },
+    "age":26
+    
+}

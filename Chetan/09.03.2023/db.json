@@ -1,0 +1,12 @@
+
+{
+	"dsn":"chetan:chetan@tcp(127.0.0.1:3306)/",
+		"User":   "chetan",
+		"Password": "chetan",
+		"Net":    "tcp",	
+		"DBName": "March",
+		"Port"	: 	"3306",
+		"Addr":   "127.0.0.1:3306",
+		"Host":"localhost"
+}
+	 

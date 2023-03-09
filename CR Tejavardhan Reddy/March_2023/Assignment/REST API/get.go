@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// working with get method
 func main() {
 	response, err := http.Get("http://google.com")
 	if err != nil {
