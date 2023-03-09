@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+)
+
+func main() {
+	file,err:=os.Open("sample.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	data, err := ioutil.ReadAll(file)
+
+	if err != nil {
+		log.Fatal()
+	}
+   fmt.Println(string(data))
+}
