@@ -1,0 +1,8 @@
+{
+    "Host":"localhost",
+    "User":"postgres",
+    "Password":"postgres",
+    "Port":"5432",
+    "Dbname":"infobell"
+    
+}
