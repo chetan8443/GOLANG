@@ -1,3 +1,4 @@
+// Reading a input as command line arguments and printing the case of letter
 package main
 
 import (
