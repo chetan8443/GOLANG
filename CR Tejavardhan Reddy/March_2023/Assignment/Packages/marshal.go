@@ -16,6 +16,7 @@ func main() {
 	}
 	//fmt.Print(str)
 	marshal(str)
+	//log.Print(str)
 }
 func marshal(str string) {
 	res, err := json.Marshal(str)
@@ -23,4 +24,5 @@ func marshal(str string) {
 		fmt.Println("error:", err)
 	}
 	fmt.Println(res)
+	fmt.Print(string(res))
 }
