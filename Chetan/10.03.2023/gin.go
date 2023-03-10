@@ -36,7 +36,6 @@ func main() {
 func getStudents(c *gin.Context) {
 
 	c.IndentedJSON(http.StatusOK, student)
-
 }
 
 // func getStudent(w http.ResponseWriter, r *http.Request){
