@@ -1,0 +1,27 @@
+package main 
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Employee struct {
+	Name  string
+	Age   int
+	Address string 
+}
+func main()  {
+	// create a employee struct
+	emp := Employee {"Prashanth",25,"Hyderabad"}
+
+    // I have converting above varibles struct into jason format
+
+      Prashanth, err := json.Marshal(emp)
+      if err != nil {
+	  fmt.Println(err)
+	  return
+    }
+
+     fmt.Println(string(Prashanth))
+
+}

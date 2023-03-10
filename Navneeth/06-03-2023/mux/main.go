@@ -32,8 +32,8 @@ func main() {
 	//route handlers
 	r.HandleFunc("/api/Books", GetBooks).Methods("GET")
 	r.HandleFunc("/api/Book/{ID}", GetBook).Methods("GET")
-	r.HandleFunc("/api/Books", addBooks).Methods("PUT")
-	r.HandleFunc("/api/Book/{ID}", updateBooks).Methods("POST")
+	r.HandleFunc("/api/Books", addBooks).Methods("POST")
+	r.HandleFunc("/api/Book/{ID}", updateBooks).Methods("PUT")
 	r.HandleFunc("/api/Book/{ID}", deleteBooks).Methods("DELETE")
 
 	http.ListenAndServe(":8000", r)
