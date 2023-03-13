@@ -143,5 +143,4 @@ func deleteById(w http.ResponseWriter, r *http.Request) {
 	jsonData, _ := json.Marshal(map[string]string{"message": "Student  details Not Found"})
 	w.Write(jsonData)
 	return
-
 }
