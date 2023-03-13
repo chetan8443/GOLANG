@@ -76,9 +76,7 @@ func UpdateStudent(c *gin.Context) {
 	var std Student
 
 	id, _ := strconv.Atoi(c.Param("id"))
-	db, _ := ioutil.ReadAll(c.Request.Body)
-
-	c.JSON(http.StatusOK, string(db))
+	
 
 	err := c.ShouldBind(&std)
 
