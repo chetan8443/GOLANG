@@ -22,47 +22,6 @@ var books []Book = []Book{
 
 func main() {
 	r := gin.Default()
-
-	// Get all books
-	r.GET("/books", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"books": books,
-		})
-	})
-
-	// Get a specific book by ID
-	r.GET("/books/:id", func(c *gin.Context) {
-		id := c.Param("id")
-		for _, book := range books {
-			if strconv.Itoa(book.ID) == id {
-				c.JSON(http.StatusOK, gin.H{
-					"book": book,
-				})
-				return
-			}
-		}
-		c.JSON(http.StatusNotFound, gin.H{
-			"message": "Book not found",
-		})
-	})
-
-	// Add a new book
-	r.POST("/books", func(c *gin.Context) {
-		var book Book
-		if err := c.ShouldBindJSON(&book); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"message": "Invalid request body",
-			})
-			return
-		}
-		book.ID = len(books) + 1
-		books = append(books, book)
-		c.JSON(http.StatusCreated, gin.H{
-			"message": "Book added",
-			"book":    book,
-		})
-	})
-
 	// Update a book
 	r.PUT("/books/:id", func(c *gin.Context) {
 		id := c.Param("id")
