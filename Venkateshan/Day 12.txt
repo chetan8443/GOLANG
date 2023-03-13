@@ -40,4 +40,3 @@ func main() {
 Output: 
 {"Name":"Mohan","Age":70}
 {Mohan 70}
-
