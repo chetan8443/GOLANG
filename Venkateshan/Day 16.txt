@@ -1,0 +1,81 @@
+1. Find the date that is exactly one year and two days after the current date
+
+
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// Get the current date
+	now := time.Now()
+
+	// Calculate the date that is exactly one year and two days after the current date
+	date := now.AddDate(1, 0, 2)
+
+	// Print the result
+	fmt.Println("Date one year and two days after the current date:", date)
+}
+Output: 
+Date one year and two days after the current date: 2024-03-15 17:01:22.1580744 +0530 IST
+
+
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	currentDate := time.Now()
+	oneYearTwoDays := currentDate.AddDate(1, 0, 2)
+	fmt.Println("Date after one year and two days:", oneYearTwoDays.Format("02-01-2006"))
+}
+Output:
+Date after one year and two days: 15-03-2024
+
+
+2. Write a program that prints the current time in two different time zones
+
+
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("Current time in GMT:", time.Now().UTC())
+	fmt.Println("Current time in EST:", time.Now().In(time.FixedZone("EST", -5*60*60)))
+}
+Output:
+
+Current time in GMT: 2023-03-13 11:30:21.9463326 +0000 UTC
+Current time in EST: 2023-03-13 06:30:21.9463326 -0500 EST
+
+
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	now := time.Now()
+	timezone := "Africa/Cairo"
+	timezone2 := "America/New_York"
+
+	loc, _ := time.LoadLocation(timezone)
+	loc2, _ := time.LoadLocation(timezone2)
+
+	fmt.Println("The current time in Africa/Cairo is:", now.In(loc).Format("2006-01-02 15:04:05"))
+	fmt.Println("The current time in America/New_York is:", now.In(loc2).Format("2006-01-02 15:04:05"))
+}
+Output: 
+The current time in Africa/Cairo is: 2023-03-13 13:29:06
+The current time in America/New_York is: 2023-03-13 07:29:06
