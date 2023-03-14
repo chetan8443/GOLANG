@@ -1,5 +1,5 @@
 package routes
-
+// this is routes file for logic for update and delete,get
 import (
 	"context"
 
@@ -32,7 +32,7 @@ func AddEntry(c *gin.Context) {
 		fmt.Println("error in line 32 entries.go")
 		return
 	}
-
+                   //creating new id for every object
 	entry.Id = primitive.NewObjectID()
 	valEr := validate.Struct(entry)
 
@@ -42,7 +42,7 @@ func AddEntry(c *gin.Context) {
 		fmt.Println("error in line 42 entries.go")
 		return
 	}
-
+                        //inserting object to  mongo dab database
 	result, err := entryCollection.InsertOne(ctx, entry)
 
 	if err != nil {
@@ -59,6 +59,7 @@ func AddEntry(c *gin.Context) {
 func GetEntries(c *gin.Context) {
 	var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 	var entries []bson.M
+	// getting all list from database
 	curser, err := entryCollection.Find(ctx, bson.M{})
 
 	if err != nil {
@@ -81,12 +82,12 @@ func GetEntries(c *gin.Context) {
 
 func GetEntryById(c *gin.Context) {
 	entryId := c.Params.ByName("id")
-
+                      // converting string to prmitive object type
 	DocId, _ := primitive.ObjectIDFromHex(entryId)
 	var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 
 	var entry bson.M
-
+                          //finding from database on id
 	err := entryCollection.FindOne(ctx, bson.M{"_id": DocId}).Decode(&entry)
 
 	if err != nil {
@@ -107,7 +108,7 @@ func GetEntryByIngerdients(c *gin.Context) {
 func UpdateById(c *gin.Context) {
 	entryId := c.Params.ByName("id")
 	fmt.Println(entryId)
-
+                  // converting string to prmitive object type
 	DocId, _ := primitive.ObjectIDFromHex(entryId)
 	var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 	var entry models.Entry
@@ -119,6 +120,7 @@ func UpdateById(c *gin.Context) {
 		fmt.Println(err)
 		return
 	}
+	 // validating all the fields
 	valEr := validate.Struct(entry)
 
 	if err != nil {
@@ -126,7 +128,7 @@ func UpdateById(c *gin.Context) {
 		fmt.Println(err)
 		return
 	}
-
+                   //updating content
 	result, rrr := entryCollection.ReplaceOne(ctx, bson.M{"id": DocId},
 		bson.M{"dish": entry.Dish,
 			"fat":         entry.Fat,
