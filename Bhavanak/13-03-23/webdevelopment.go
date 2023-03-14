@@ -42,7 +42,6 @@ func getByID(w http.ResponseWriter, r *http.Request) {
 			std = students[i]
 			jsonData, _ := json.Marshal(std)
 			w.Header().Set("Content-Type", "application/json")
-			// jsonData, _ := json.Marshal(map[string]string{"message": "Employee details Not Found"})
 			w.Write(jsonData)
 			return
 		}
