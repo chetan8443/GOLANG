@@ -1,0 +1,4 @@
+CREATE TABLE EMP 
+(empid int,
+empname varchar(50),
+empAddr text);
