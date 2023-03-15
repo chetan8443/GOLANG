@@ -20,7 +20,10 @@ func GetResult(c *gin.Context) {
 	for res.Next() { // iterate over query result
 		var result string
 		res.Scan(&result) // scanning query result into result variable
-		c.IndentedJSON(http.StatusOK, gin.H{"Result": result}) // sending response in json format
+		if result != "" {
+			c.IndentedJSON(http.StatusOK, gin.H{"Result": result}) // sending response in json format
+			return
+		}
 	}
-
+	c.IndentedJSON(http.StatusOK, gin.H{"Result": "Student not found"})
 }
