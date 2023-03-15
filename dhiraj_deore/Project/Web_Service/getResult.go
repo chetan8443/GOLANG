@@ -20,8 +20,7 @@ func GetResult(c *gin.Context) {
 	for res.Next() { // iterate over query result
 		var result string
 		res.Scan(&result) // scanning query result into result variable
-		response := map[string]string{"Result": result}
-		c.IndentedJSON(http.StatusOK, response) // sending response in json format
+		c.IndentedJSON(http.StatusOK, gin.H{"Result": result}) // sending response in json format
 	}
 
 }
