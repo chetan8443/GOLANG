@@ -4,6 +4,6 @@
     "host":"localhost",
     "port":"3306",
     "dbname":"studentinfo",
-    "Net":"tcp",
-    "Addr":"127.0.0.1:3306"
+    "net":"tcp",
+    "addr":"127.0.0.1.3306"
 }

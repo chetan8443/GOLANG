@@ -1,1 +1,0 @@
-CREATE TABLE STUDENT (sid int,sName varchar(200),sMarks int,sResult varchar);
