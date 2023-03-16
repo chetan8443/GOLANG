@@ -10,6 +10,7 @@ import (
 
 var (
 	db *sql.DB
+	DB *sql.DB
 )
 
 func Connect() *sql.DB {
@@ -53,14 +54,14 @@ func Connect() *sql.DB {
 }
 
 func MarksProcessor() {
-	db = Connect()
+	DB = Connect()
 	fmt.Println("Connected successfully...")
-	db.Exec("CREATE TABLE STUDENT(sid varchar(200) primary key,sname varchar(200), marks int,result varchar(200))")
+	DB.Exec("CREATE TABLE STUDENT(sid varchar(200) primary key,sname varchar(200), marks int,result varchar(200))")
 	fmt.Println("Table created")
 	fmt.Println("Inserting the data......")
-	for i, data := range arrays {
-		db.Exec("INSERT INTO STUDENT(sid,sname,marks)values(?,?,?)", data[0], data[1], data[2])
-		fmt.Println(i+1, "th row inserted")
+	for i := 0; i <= 4; i++ {
+		DB.Exec("INSERT INTO STUDENT(sid,sname,marks)values(?,?,?)", arrays[i][0], arrays[i][1], arrays[i][2])
+		//DB.Exec("ALTER TABLE STUDENT	ADD result int CASE	WHEN stdMarks >=70 THEN UPDATE results 'Pass with Distiction' WHEN stdMarks >=40 THEN UPDATE results 'Pass' ELSE UPDATE 'Fail'")
 	}
-	fmt.Println("The data inserted..")
+	fmt.Println("Data inserted")
 }
