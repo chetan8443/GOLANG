@@ -17,57 +17,50 @@ func Connect() *sql.DB {
 	viper.SetConfigName("configDB")
 	viper.SetConfigType("json")
 	viper.AddConfigPath(".")
-	//fmt.Print("Reading the json file....")
+	fmt.Print("Reading the json file....\n\n")
 	err := viper.ReadInConfig()
 	if err != nil {
-		fmt.Printf("Fatal error:%d", err)
+		panic(fmt.Errorf("Fatal error(unable to read Json file):", err))
 	}
 
 	user := viper.GetString("user")
 	password := viper.GetString("password")
-	host := viper.GetString("host")
-	port := viper.GetString("port")
-	dbname := viper.GetString("dbname")
+	dbname := viper.GetString("Dbname")
 	net := viper.GetString("net")
 	addr := viper.GetString("addr")
-
+	// fmt.Println("\n*******************************************")
 	//opening the config file of json
-	mysqlInfo := "host=" + host + " port=" + port + " user=" + user + " password=" + password + "net" + net + "addr" + addr + " sslmode=disable"
-	fmt.Print(mysqlInfo)
+	var mysqlInfo string = user + ":" + password + "@" + net + "(" + addr + ")/"
+	// fmt.Print(mysqlInfo)
 	db1, err := sql.Open("mysql", mysqlInfo)
-	//**************************************
 	if err != nil {
-		fmt.Println("Check your config file...", err)
-		return nil
+		panic(fmt.Errorf("Fatal error(fail to check configfile):", err))
 	}
-	//****************************************
 	db1.Exec("DROP DATABASE studentinfo")
-	_, err = db1.Exec("create database" + dbname)
+	_, err = db1.Exec("create database " + dbname)
 	if err != nil {
-		fmt.Print("Unable to create database", err)
+		panic(fmt.Errorf("Fatal error(unable to create database):\n", err))
 	}
-	configinfo := mysqlInfo + "database=" + dbname
-	fmt.Println(configinfo)
+
+	configinfo := mysqlInfo + dbname
+	//fmt.Println(configinfo)
 	db2, err := sql.Open("mysql", configinfo)
 	if err != nil {
-		fmt.Println("Unable to read Json file", err)
+		panic(fmt.Errorf("Fatal error(unable to create database):", err))
 	}
-	defer db.Close()
+	defer db1.Close()
 	return db2
 }
 
 func MarksProcessor() {
-	// fmt.Println("\nConnecting with database....")
-	// db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/studentinfo")
-	// if err != nil {
-	// 	fmt.Println("Error:", err)
-	// }
-	// defer db.Close()
-	// // fmt.Print("**********\n\n", arrays)
-	// fmt.Println("Connected successfully...")
-	// db.Exec("CREATE TABLE IF NOT EXISTS STUDENT (sid varchar(20) primary key , sname varchar(20),smarks int,result varchar(100))")
-	// for _, info := range arrays {
-	// 	//fmt.Println(info[0], info[1], info[2])
-	// 	db.Exec("INSERT INTO STUDENT (sid,sname,smarks) values (info[0],info[1],info[2])")
-	Connect()
+	db = Connect()
+	fmt.Println("Connected successfully...")
+	db.Exec("CREATE TABLE STUDENT(sid varchar(200) primary key,sname varchar(200), marks int,result varchar(200))")
+	fmt.Println("Table created")
+	fmt.Println("Inserting the data......")
+	for i, data := range arrays {
+		db.Exec("INSERT INTO STUDENT(sid,sname,marks)values(?,?,?)", data[0], data[1], data[2])
+		fmt.Println(i+1, "th row inserted")
+	}
+	fmt.Println("The data inserted..")
 }

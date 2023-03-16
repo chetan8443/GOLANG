@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"fmt"
 	"log"
 	"os"
 )
@@ -31,4 +32,5 @@ func OpenFile() {
 	// 	s = append(s, students{sid: record[0], sname: record[1], smarks: b})
 	// }
 	// //fmt.Printf("%+v\n", s)
+	fmt.Println(arrays)
 }

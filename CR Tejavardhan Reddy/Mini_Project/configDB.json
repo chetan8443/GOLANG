@@ -1,9 +1,7 @@
 {
     "user":"root",
     "password":"Teja@7483",
-    "host":"localhost",
-    "port":"3306",
-    "dbname":"studentinfo",
+    "Dbname":"studentinfo",
     "net":"tcp",
-    "addr":"127.0.0.1.3306"
+    "addr":"127.0.0.1:3306"
 }
