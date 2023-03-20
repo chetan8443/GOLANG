@@ -16,17 +16,18 @@ type Marks struct {
 
 func IngestRes() {
 
-	res := []string{}
+	res := []string{}//slice of strings
 
 	var db = b.GetMySQLDB()
 
-	marks := []Marks{}
+	marks := []Marks{}//slice of struct
 
 	file, err := os.Open("BulkLoad/StudentMarks.csv")
 	b.CheckError(err)
 
 	df := csv.NewReader(file)
 	data, err := df.ReadAll()
+	fmt.Println(data)
 	b.CheckError(err)
 
 	for _, value := range data {

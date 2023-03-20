@@ -7,7 +7,7 @@ import (
 )
 
 func GetMySQLDB() *sql.DB {
-	db, err := sql.Open("mysql", "root:1234@(127.0.0.1:3306)/result?parseTime=true")
+	db, err := sql.Open("mysql", "root:1234@@tcp(127.0.0.1:3306)/amma?parseTime=true")
 	CheckError(err)
 	return db
 }

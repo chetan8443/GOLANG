@@ -37,7 +37,6 @@ func main() {
 	}
 
 	fmt.Println(marks)
-
 	for i := 0; i < len(marks); i++ {
 		_, err = db.Exec("insert into Result(ID, StudentName, Marks) values(?, ?, ?)", marks[i].ID, marks[i].StudentName, marks[i].Marks)
 		b.CheckError(err)
