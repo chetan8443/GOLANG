@@ -1,0 +1,9 @@
+{
+    "user":"root",
+    "password":"9704348918@Bc",
+    "host":"localhost",
+    "port":"3306",
+    "dbname":"student",
+    "Net":"tcp",
+    "Addr":"127.0.0.1:3306"
+}
