@@ -49,6 +49,5 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/marks/:id", w.GetResultByID)
-
 	router.Run("localhost:5000")
 }
