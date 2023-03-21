@@ -1,65 +1,45 @@
-package main
+package MarksProcessor
 
 import (
-	"database/sql"
 	"fmt"
-	"log"
-
-	_ "github.com/go-sql-driver/mysql"
+	a "new/bulkload" // importing bulkload package for connection
 )
 
-func getMySQLDB() *sql.DB {
-	//connection
-	db, err := sql.Open("mysql", "root:9704348918@Bc@(127.0.0.1:3306)/student?parseTime=true")
-	if err != nil {
-		log.Fatal(err)
-	}
-	return db
-}
-func main() {
+func GradesProcessor() {
 
-	var db = getMySQLDB()
+	db := a.Connection()
 	db.Exec("drop table results")
-	db.Exec("create table results(sid varchar(255), result varchar(255))")
+	db.Exec("create table results(id varchar(255), result varchar(255))")
 
-	res, err := db.Query("select * from studentinfo")
+	res, err := db.Query("select * from students")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	//iterating each record
 	for res.Next() {
-		var sid, sname string
+		var id, name string
 		var marks int
 		// scanning values of query into variables
-		err = res.Scan(&sid, &sname, &marks)
+		err = res.Scan(&id, &name, &marks)
 		if err != nil {
 			fmt.Println(err)
 		}
 
 		// assigning grades to student according to marks
-		if marks >= 70 {
+		if marks > 69 {
 			res := "Pass with Distinction"
-			db.Exec("insert into results values(?,?)", sid, res)
+			db.Exec("insert into results values(?,?)", id, res)
 
-		} else if marks >= 40 {
+		} else if marks > 40 {
 			res := "Pass with A grade"
-			db.Exec("insert into results values(?,?)", sid, res)
+			db.Exec("insert into results values(?,?)", id, res)
 
 		} else {
 			res := "You are Fail"
-			db.Exec("insert into results values(?,?)", sid, res)
+			db.Exec("insert into results values(?,?)", id, res)
 		}
 
-		//}
-		fmt.Println("Table Inserted")
-
-		// 	result, err := db.Query("select studentinfo.sid,studentinfo.sname,studentinfo.marks,results.result from (studentinfo) join (results) on (studentinfo.sid=results.sid)")
-		// 	if err != nil {
-		// 		fmt.Println(err)
-		// 	}
-		// 	db.Exec("insert into results values(?,?,?,?)", sid, sname, marks, result)
-
-		// }
 	}
+
 }
