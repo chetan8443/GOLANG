@@ -1,7 +1,9 @@
 package BulkLoad
 
 import (
+	"database/sql"
 	"encoding/csv"
+	"fmt"
 	"log"
 	"os"
 	"strconv"
@@ -31,4 +33,12 @@ func OpenFile() [][]string {
 	//fmt.Printf("%+v\n", s)
 	//fmt.Println(arrays)
 	return arrays
+}
+
+func Connect() *sql.DB {
+	db, err := sql.Open("mysql", "root:Teja@7483@tcp(127.0.0.1:3306)/studentinfo?parseTime=true")
+	if err != nil {
+		fmt.Println("Unable to connect the database")
+	}
+	return db
 }
