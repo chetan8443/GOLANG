@@ -13,8 +13,8 @@ func main() {
 	a.OpenFile()
 	b.MarksProcessor()
 	//assigning the port
-	router := gin.New()
+	router := gin.Default()
 	router.GET("/marks/:id", w.GetDetails)
-	router.Run(":8081")
+	router.Run(":4041")
 	fmt.Println("Port established...")
 }

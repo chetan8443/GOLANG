@@ -1,9 +1,9 @@
-package webserver
+package Webserver
 
 import (
 	"fmt"
 	"net/http"
-	a "v1/MarkProcessor"
+	a "v1/BulkLoad"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,20 +13,15 @@ func GetDetails(c *gin.Context) {
 	//fmt.Println(id)
 	id = string(id)
 	var db = a.Connect()
-	data, err := db.Query("SELECT * FROM RESULT WHERE ID=?", id)
+	data, err := db.Query("SELECT * FROM result WHERE ID=?", id)
+	fmt.Println(data)
+	for data.Next() {
+		result := ""
+		data.Scan(&result)
+		output := map[string]string{"result": result}
+		c.IndentedJSON(http.StatusOK, output)
+	}
 	if err != nil {
 		fmt.Println(err)
 	}
-	//fmt.Println(data)
-	for data.Next() {
-		var id int
-		var result string
-
-		data.Scan(&id, &result)
-		if result != "" {
-			c.IndentedJSON(http.StatusOK, gin.H{"id": id, "Result": result})
-			return
-		}
-	}
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Data Not Found"})
 }

@@ -48,7 +48,6 @@ func Connect() *sql.DB {
 	if err != nil {
 		fmt.Println("Fatal error(unable to create database):", err)
 	}
-	defer db1.Close()
 	return db2
 }
 
@@ -61,6 +60,7 @@ func MarksProcessor() {
 	fmt.Println("Table created")
 	fmt.Println("Inserting the data......")
 	for i := 0; i < 5; i++ {
+		DB.Query("INSERT INTO STUDENT(sid,sname,marks)values(?,?,?)", s[i][0], s[i][1], s[i][2])
 		DB.Query("CREATE TABLE RESULT(sid varchar(20)primary key,result varchar(200))")
 		id := s[i][0]
 		marks := s[i][2]
