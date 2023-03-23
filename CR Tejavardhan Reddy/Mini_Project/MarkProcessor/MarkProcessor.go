@@ -61,17 +61,17 @@ func MarksProcessor() {
 	fmt.Println("Inserting the data......")
 	for i := 0; i < 5; i++ {
 		DB.Query("INSERT INTO STUDENT(sid,sname,marks)values(?,?,?)", s[i][0], s[i][1], s[i][2])
-		DB.Query("CREATE TABLE RESULT(sid varchar(20)primary key,result varchar(200))")
+		DB.Query("CREATE TABLE RESULT1(sid varchar(20)primary key,result varchar(200))")
 		id := s[i][0]
 		marks := s[i][2]
 		x, _ := strconv.ParseInt(marks, 10, 64)
 		//Manipulation of the Query
 		if x >= 70 {
-			DB.Query("INSERT INTO RESULT(sid,result)values(?,'Pass With Distinction')", id)
+			DB.Query("INSERT INTO RESULT1(sid,result)values(?,'Pass With Distinction')", id)
 		} else if x < 70 && x >= 40 {
-			DB.Query("INSERT INTO RESULT(sid,result)values(?,'Pass')", id)
+			DB.Query("INSERT INTO RESULT1(sid,result)values(?,'Pass')", id)
 		} else {
-			DB.Query("INSERT INTO RESULT(sid,result)values(?,'Fail')", id)
+			DB.Query("INSERT INTO RESULT1(sid,result)values(?,'Fail')", id)
 		}
 	}
 }
