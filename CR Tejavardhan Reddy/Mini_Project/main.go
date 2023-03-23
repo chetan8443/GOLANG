@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	a "v1/BulkLoad"
 	b "v1/MarkProcessor"
 	w "v1/WebServer"
@@ -10,11 +11,15 @@ import (
 )
 
 func main() {
+
+	//assigning the port
 	a.OpenFile()
 	b.MarksProcessor()
-	//assigning the port
 	router := gin.Default()
-	router.GET("/marks/:id", w.GetDetails)
-	router.Run(":4041")
+
+	// fmt.Println("OKOK")
+	router.GET("/marks/:id", w.GetDetails) //.Methods("GET")
+	router.Run("127.0.0.1:5001")
+	// fmt.Fprintln(w, "Hello")
 	fmt.Println("Port established...")
 }

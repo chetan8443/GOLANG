@@ -32,6 +32,7 @@ func OpenFile() [][]string {
 	}
 	//fmt.Printf("%+v\n", s)
 	//fmt.Println(arrays)
+	fmt.Println("The CSV data is loaded")
 	return arrays
 }
 
